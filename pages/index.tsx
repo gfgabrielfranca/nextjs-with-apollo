@@ -1,16 +1,8 @@
-import React from 'react';
 import { initializeApollo } from '../lib/apolloClient';
-import PostList, { ALL_CHARACTERS_QUERY } from '../components/PostList';
 
-const Home: React.FC = () => {
-  return (
-    <div>
-      <PostList />
-    </div>
-  );
-};
+import ALL_CHARACTERS_QUERY from '../data/allCharacters';
 
-export default Home;
+import Home from './Home';
 
 export const getStaticProps = async () => {
   const apolloClient = initializeApollo();
@@ -26,3 +18,5 @@ export const getStaticProps = async () => {
     revalidate: 1,
   };
 };
+
+export default Home;
